@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/first-inquiry-405600/flask', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/first-inquiry-405600/flask']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'flask', '--image', 'gcr.io/first-inquiry-405600/flask', '--region', 'us-central1', '--platform', 'managed','--port','5000']
+images:
+- gcr.io/first-inquiry-405600/flask

@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/third-framing-405601/react', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/third-framing-405601/react']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'react', '--image', 'gcr.io/third-framing-405601/react', '--region', 'us-central1', '--platform', 'managed','--port','3000']
+images:
+- gcr.io/third-framing-405601/react

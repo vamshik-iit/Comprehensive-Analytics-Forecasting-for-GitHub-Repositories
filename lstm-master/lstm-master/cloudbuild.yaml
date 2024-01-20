@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/lstm-405600/lstm', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/lstm-405600/lstm']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'lstm', '--image', 'gcr.io/lstm-405600/lstm', '--region', 'us-central1', '--platform', 'managed','--port','8080']
+images:
+- gcr.io/lstm-405600/lstm

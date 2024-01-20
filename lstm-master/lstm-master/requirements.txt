@@ -1,0 +1,14 @@
+flask
+pandas
+numpy
+matplotlib 
+scikit-learn
+scipy
+tensorflow
+keras
+google-cloud-storage
+flask-cors
+ephem
+pystan<3
+prophet
+statsmodels
