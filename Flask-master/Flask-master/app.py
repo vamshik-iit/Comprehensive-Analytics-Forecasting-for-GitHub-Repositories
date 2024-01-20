@@ -459,8 +459,8 @@ def github():
 
 
     # Update your Google cloud deployed LSTM app URL (NOTE: DO NOT REMOVE "/")
-    LSTM_API_URL = "https://lstm-5qxfndzapa-uc.a.run.app/" + "api/forecast"
-    LSTM_API_URL_FINAL = "https://lstm-5qxfndzapa-uc.a.run.app/"
+    LSTM_API_URL = "" + "api/forecast"
+    LSTM_API_URL_FINAL = ""
 
     '''
     Trigger the LSTM microservice to forecasted the created issues
